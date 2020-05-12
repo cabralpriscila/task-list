@@ -5,7 +5,8 @@
 <ul>
     <li>
         <%= task.description %> <br>
-        <%= link_to 'Editar', edit_task_path(task) %> <br>
+        <%= link_to 'Editar', edit_task_path(task) %>
+        <%= link_to 'Apagar', task_path(task), method: :delete, data: { confirm: 'Deseja realmente apagar esta task? '} %>
     </li>
 </ul>
 <% end %>
