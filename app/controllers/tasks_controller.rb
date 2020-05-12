@@ -5,8 +5,17 @@ class TasksController < ApplicationController
     def create
         @task = Task.new(params.require(:task).permit(:description, :status))
 
-        @task.save
+        @task.save 
         redirect_to root_path
     end
     
+    def edit
+        @task = Task.find(params[:id])
+    end
+   
+    def update
+        @task = Task.find(params[:id])
+        @task.update(params.require(:task).permit(:description, :status))
+        redirect_to root_path
+    end
 end
