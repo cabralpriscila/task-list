@@ -1,3 +1,5 @@
-<h1>Bem vindxs ao Task List</h1>
-<p>Página HTML</p>
-<em>Criada em <%= Date.today %></em>
+<h1>Task List</h1>
+<h3>Seja bem-vindo(a) ao seu task list</h3>
+<% @tasks.each do |task| %>
+    <%= task.description %>
+<% end %>
